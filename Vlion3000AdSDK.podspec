@@ -3,7 +3,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Vlion3000AdSDK"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "Vlion3000AdSDK."
 
   spec.description  = <<-DESC
@@ -57,34 +57,12 @@ Pod::Spec.new do |spec|
        'VALID_ARCHS' =>  valid_archs.join(' '),
      }
   end
-
-  
-  spec.subspec 'VLion3000ADSDKGDTAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
-     ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKGDTAdapter/VLionADSDKGDTAdapter.framework'
-     ss.dependency 'GDTMobSDK'
-     ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  end
   
   spec.subspec 'VLion3000ADSDKIMBAdapter' do |ss|
      ss.dependency 'Vlion3000AdSDK/Vlion3000AdSDK'
      ss.ios.deployment_target = '9.0'
      ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKIMBAdapter/VLionADSDKIMBAdapter.framework'
      ss.dependency 'InMobiSDK-China', '~> 7.4.3'
-     ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  end
-  
-  spec.subspec 'VLion3000ADSDKKSAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
-     ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKKSAdapter/VLionADSDKKSAdapter.framework'
-     ss.dependency 'KSAdSDK'
-     ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  end
-  
-  spec.subspec 'VLion3000ADSDKSGBAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
-     ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKSGBAdapter/VLionADSDKSGBAdapter.framework'
-     ss.dependency 'SigmobAd-iOS'
      ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
   end
   
