@@ -3,7 +3,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Vlion3000AdSDK"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "Vlion3000AdSDK."
 
   spec.description  = <<-DESC
@@ -61,7 +61,6 @@ Pod::Spec.new do |spec|
 
   
   spec.subspec 'VLionADSDKGDTAdapter' do |ss|
-     ss.dependency 'Vlion3000AdSDK/Vlion3000AdSDK'
      ss.ios.deployment_target = '9.0'
      ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKGDTAdapter/VLionADSDKGDTAdapter.framework'
      ss.dependency 'GDTMobSDK'
@@ -77,7 +76,6 @@ Pod::Spec.new do |spec|
   end
   
   spec.subspec 'VLionADSDKKSAdapter' do |ss|
-     ss.dependency 'Vlion3000AdSDK/Vlion3000AdSDK'
      ss.ios.deployment_target = '9.0'
      ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKKSAdapter/VLionADSDKKSAdapter.framework'
      ss.dependency 'KSAdSDK'
@@ -85,7 +83,6 @@ Pod::Spec.new do |spec|
   end
   
   spec.subspec 'VLionADSDKSGBAdapter' do |ss|
-     ss.dependency 'Vlion3000AdSDK/Vlion3000AdSDK'
      ss.ios.deployment_target = '9.0'
      ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKSGBAdapter/VLionADSDKSGBAdapter.framework'
      ss.dependency 'SigmobAd-iOS'
@@ -93,7 +90,6 @@ Pod::Spec.new do |spec|
   end
   
   spec.subspec 'VLionADSDKMGTAdapter' do |ss|
-     ss.dependency 'Vlion3000AdSDK/Vlion3000AdSDK'
      ss.ios.deployment_target = '9.0'
      ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKMGTAdapter/VLionADSDKMGTAdapter.framework'
      
