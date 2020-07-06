@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<VLNInterstitialAdDelegate> delegate;
 
+- (instancetype)initWithSceneName:(NSString *)sceneName;
+
 /**
  *  构造方法
  @param tagId - 广告位 ID

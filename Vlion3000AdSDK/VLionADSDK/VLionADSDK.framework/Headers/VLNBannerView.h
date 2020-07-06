@@ -13,10 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol VLNBannerViewDelegate;
 
 @interface VLNBannerView : UIView
-
+/**
+*   构造方法
+  @param sceneName - 场景名称
+*/
+- (instancetype)initWithSceneName:(NSString *)sceneName;
 /**
  *  构造方法
- @param tagId - 广告位 ID
+    @param tagId - 广告位 ID
  */
 - (instancetype)initWithTagId:(NSString *)tagId;
 

@@ -39,7 +39,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RSGameListViewController : UIViewController
 /**
- 必传mediaId
+ 必传sceneName,自己在后台配置的场景名称，这个构造方法和下面构造方法只能选择一种，不可以重复使用
+*/
+- (instancetype)initWithSceneName:(NSString *)sceneName;
+/**
+ 必传mediaId,可向客服获取
  */
 - (instancetype)initWithMediaId:(NSString *)mediaId;
 

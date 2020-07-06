@@ -43,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy, readonly) NSString * tagId;
 
+- (instancetype)initWithSceneName:(NSString *)sceneName;
+
 - (instancetype)initWithTagId:(NSString *)tagId;
 /**
   @param count 数量至少为1，建议1，最多3

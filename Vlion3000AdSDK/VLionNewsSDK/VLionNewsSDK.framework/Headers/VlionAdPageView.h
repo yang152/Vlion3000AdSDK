@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VlionAdPageView : UIView
 
+- (instancetype)initWithFrame:(CGRect)frame sceneName:(NSString *)sceneName currentVC:(UIViewController *)currentVC;
+
 - (instancetype)initWithFrame:(CGRect)frame media:(NSString *)media submedia:(NSString *)submedia currentVC:(UIViewController *)currentVC;
 
 @end

@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<VLNSplashAdDelegate> delegate;
 
+- (instancetype)initWithSceneName:(NSString *)sceneName;
+
 /**
  *  构造方法
  @param tagId - 广告位 ID

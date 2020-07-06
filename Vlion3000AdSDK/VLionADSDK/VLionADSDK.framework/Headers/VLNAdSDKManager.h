@@ -15,14 +15,26 @@ NS_ASSUME_NONNULL_BEGIN
 + (VLNAdSDKManager * _Nonnull)defaultManager;
 
 /**
+ 3000平台初始化方式
  根据AppId初始化广告SDK
- @param appID : 瑞狮平台注册的AppId,不填将导致无法请求广告数据
+ @param appId : 瑞狮平台注册的AppId,不填将导致无法请求广告数据
  瑞狮平台地址:http://puma.vlion.cn
  */
-- (void)setAppID:(NSString *)appID;
+- (void)registerAppId:(NSString *)appId finishBlock:(void(^)(BOOL success, NSError *error))finishBlock;
 
+/**
+聚合平台初始化方式
+根据AppId初始化广告SDK
+@param appId : 瑞狮平台注册的AppId,不填将导致无法请求广告数据
+瑞狮平台地址:http://puma.vlion.cn
+*/
+- (void)registerAppId:(NSString *)appId;
 
-- (NSString *)appID;
+/// 3000的appid
+- (NSString *)appId;
+
+/// 聚合方式初始化的appid
+- (NSString *)polyAppid;
 
 - (NSString *)getSDKVersion;
 

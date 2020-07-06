@@ -22,6 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString * tagId;
 
 /**
+*   构造方法
+  @param sceneName - 场景名称
+*/
+- (instancetype)initWithSceneName:(NSString *)sceneName;
+
+/**
  构造方法
  
  @param tagId - 广告位 ID

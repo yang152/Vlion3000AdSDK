@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy, readonly) NSString * tagId;
 
+- (instancetype)initWithSceneName:(NSString *)sceneName;
+
 - (instancetype)initWithTagId:(NSString *)tagId;
 
 - (void)loadAdData;
