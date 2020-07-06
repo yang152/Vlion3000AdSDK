@@ -34,6 +34,10 @@ Pod::Spec.new do |spec|
      ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDK/VLionADSDK.framework'
      ss.resource = 'Vlion3000AdSDK/VLionADSDK/VLionAdImg.bundle'
      ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
+     ss.dependency 'Vlion3000AdSDK/VLionADSDKGDTAdapter'
+     ss.dependency 'Vlion3000AdSDK/VLionADSDKKSAdapter'
+     ss.dependency 'Vlion3000AdSDK/VLionADSDKMGTAdapter'
+     ss.dependency 'Vlion3000AdSDK/VLionADSDKSGBAdapter'
   end
   
   spec.subspec 'VLionADSDKBDAdapter' do |ss|
