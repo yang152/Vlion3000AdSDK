@@ -3,7 +3,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Vlion3000AdSDK"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "Vlion3000AdSDK."
 
   spec.description  = <<-DESC
@@ -36,7 +36,6 @@ Pod::Spec.new do |spec|
      ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
      ss.dependency 'Vlion3000AdSDK/VLionADSDKGDTAdapter'
      ss.dependency 'Vlion3000AdSDK/VLionADSDKKSAdapter'
-     ss.dependency 'Vlion3000AdSDK/VLionADSDKMGTAdapter'
      ss.dependency 'Vlion3000AdSDK/VLionADSDKSGBAdapter'
   end
   
@@ -86,22 +85,6 @@ Pod::Spec.new do |spec|
      ss.ios.deployment_target = '9.0'
      ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKSGBAdapter/VLionADSDKSGBAdapter.framework'
      ss.dependency 'SigmobAd-iOS'
-     ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
-  end
-  
-  spec.subspec 'VLionADSDKMGTAdapter' do |ss|
-     ss.ios.deployment_target = '9.0'
-     ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKMGTAdapter/VLionADSDKMGTAdapter.framework'
-     
-     ss.dependency 'MintegralAdSDK'
-     ss.dependency 'MintegralAdSDK/NativeAd'
-     ss.dependency 'MintegralAdSDK/NativeAdvancedAd'
-     ss.dependency 'MintegralAdSDK/RewardVideoAd'
-     ss.dependency 'MintegralAdSDK/InterstitialVideoAd'
-     ss.dependency 'MintegralAdSDK/InterstitialAd'
-     ss.dependency 'MintegralAdSDK/BannerAd'
-     ss.dependency 'MintegralAdSDK/SplashAd'
-     
      ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
   end
   
