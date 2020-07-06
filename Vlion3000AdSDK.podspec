@@ -3,7 +3,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Vlion3000AdSDK"
-  spec.version      = "1.0.8"
+  spec.version      = "1.0.9"
   spec.summary      = "Vlion3000AdSDK."
 
   spec.description  = <<-DESC
@@ -36,6 +36,14 @@ Pod::Spec.new do |spec|
      ss.dependency 'GDTMobSDK'
      ss.dependency 'KSAdSDK'
      ss.dependency 'SigmobAd-iOS'
+     ss.dependency 'MintegralAdSDK'
+     ss.dependency 'MintegralAdSDK/NativeAd'
+     ss.dependency 'MintegralAdSDK/NativeAdvancedAd'
+     ss.dependency 'MintegralAdSDK/RewardVideoAd'
+     ss.dependency 'MintegralAdSDK/InterstitialVideoAd'
+     ss.dependency 'MintegralAdSDK/InterstitialAd'
+     ss.dependency 'MintegralAdSDK/BannerAd'
+     ss.dependency 'MintegralAdSDK/SplashAd'
      ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
   end
   

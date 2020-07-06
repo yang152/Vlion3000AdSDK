@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  3000平台初始化方式
  根据AppId初始化广告SDK
  @param appId : 瑞狮平台注册的AppId,不填将导致无法请求广告数据
- 瑞狮平台地址:http://puma.vlion.cn
+ 瑞狮平台地址:http://3000.mobi/
  */
 - (void)registerAppId:(NSString *)appId finishBlock:(void(^)(BOOL success, NSError *error))finishBlock;
 
