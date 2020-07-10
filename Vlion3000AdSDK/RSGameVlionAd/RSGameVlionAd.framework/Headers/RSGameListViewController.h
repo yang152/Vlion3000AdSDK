@@ -11,27 +11,74 @@
 @protocol RSGameListViewControllerDelegate <NSObject>
 
 @optional
-
-/**加载Banner广告*/
-- (void)onLoadVlionBannerAd:(NSString *_Nullable)adId;
-
-/**加载插屏广告*/
-- (void)onLoadVlionSpotAd:(NSString *_Nullable)adId;
-
-/**加载激励视频广告*/
-- (void)onLoadVlionRewardVideoAd:(NSString *_Nullable)adId;
-
-/**展示激励视频广告*/
-- (void)onShowVlionRewardVideoAd:(NSString *_Nullable)adId;
-
-/**进入游戏回调*/
+/**
+    进入游戏回调
+ */
 - (void)vlionAdViewClickGame:(NSString *_Nullable)gameId;
 
-/**退出游戏回调*/
+/**
+    退出游戏回调
+ */
 - (void)vlionAdViewExitGame:(NSString *_Nullable)gameId;
 
-/**激励视频加载失败回调*/
-- (void)vlionRewardADLoadFailedWithError:(NSError *_Nullable)error;
+/**
+    banner展示成功
+ */
+- (void)vlionBannerAdExposedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
+/**
+    banner展示失败
+*/
+- (void)vlionBannerAdLoadFailedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId error:(NSError *_Nullable)error;
+/**
+    banner点击
+ */
+- (void)vlionBannerAdDidClickWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
+/**
+    banner点击关闭
+*/
+- (void)vlionBannerAdDidClosedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
+
+/**
+    插屏展示成功
+ */
+- (void)vlionInterstitialAdExposedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
+/**
+    插屏展示失败
+*/
+- (void)vlionInterstitialAdLoadFailedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId error:(NSError *_Nullable)error;
+/**
+    插屏点击
+ */
+- (void)vlionInterstitialAdDidClickWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
+/**
+    插屏点击关闭
+*/
+- (void)vlionInterstitialAdDidClosedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
+
+/**
+    激励视频展示成功
+ */
+- (void)vlionRewardVideoAdExposedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
+/**
+    激励视频加载失败
+*/
+- (void)vlionRewardVideoAdLoadFailedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId error:(NSError *_Nullable)error;
+/**
+    激励视频播放失败
+*/
+- (void)vlionRewardVideoAdPlayFailedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId error:(NSError *_Nullable)error;
+/**
+    激励视频播放完成
+*/
+- (void)vlionRewardedVideoAdDidPlayFinishWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId error:(NSError *_Nullable)error;
+/**
+    激励视频点击
+ */
+- (void)vlionRewardVideoAdDidClickWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
+/**
+    激励视频点击关闭
+*/
+- (void)vlionRewardVideoAdDidClosedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
 
 @end
 

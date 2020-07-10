@@ -85,9 +85,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)rewardVideoAdDidClicked:(VLNRewardedVideoAd *)rewardedVideoAd;
 
 /**
- 视频广告各种错误信息回调
+ 视频广告加载错误信息回调
  */
-- (void)rewardVideoAd:(VLNRewardedVideoAd *)rewardedVideoAd didFailWithError:(NSError *)error;
+- (void)rewardVideoAd:(VLNRewardedVideoAd *)rewardedVideoAd loadFailedWithError:(NSError *)error;
+
+/**
+ 视频广告播放错误信息回调
+ */
+- (void)rewardVideoAd:(VLNRewardedVideoAd *)rewardedVideoAd playFailedWithError:(NSError *)error;
 
 /**
  视频广告播放达到激励条件回调
