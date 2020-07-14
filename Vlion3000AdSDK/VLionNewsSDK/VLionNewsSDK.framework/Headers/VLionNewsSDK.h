@@ -17,4 +17,6 @@ FOUNDATION_EXPORT const unsigned char VLionNewsSDKVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <VLionNewsSDK/PublicHeader.h>
 
 #import <VLionNewsSDK/VlionAdPageView.h>
+#import <VLionNewsSDK/VLNewsAdInfoModel.h>
+
 
