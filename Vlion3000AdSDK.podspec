@@ -3,7 +3,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Vlion3000AdSDK"
-  spec.version      = "1.2.12"
+  spec.version      = "1.2.15"
   spec.summary      = "Vlion3000AdSDK."
 
   spec.description  = <<-DESC
@@ -44,11 +44,9 @@ Pod::Spec.new do |spec|
      ss.dependency 'KSAdSDK'
      ss.dependency 'SigmobAd-iOS'
      ss.dependency 'MintegralAdSDK'
-     ss.dependency 'MintegralAdSDK/NativeAd'
      ss.dependency 'MintegralAdSDK/NativeAdvancedAd'
      ss.dependency 'MintegralAdSDK/RewardVideoAd'
      ss.dependency 'MintegralAdSDK/InterstitialVideoAd'
-     ss.dependency 'MintegralAdSDK/InterstitialAd'
      ss.dependency 'MintegralAdSDK/BannerAd'
      ss.dependency 'MintegralAdSDK/SplashAd'
      ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
@@ -59,6 +57,35 @@ Pod::Spec.new do |spec|
      ss.ios.deployment_target = '9.0'
      ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKBDAdapter/VLionADSDKBDAdapter.framework'
      ss.dependency 'BaiduMobAd_SDK'
+     ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
+  end
+  
+  spec.subspec 'VLion3000ADSDKGDTAdapter' do |ss|
+     ss.dependency 'Vlion3000AdSDK/Vlion3000AdSDK'
+     ss.ios.deployment_target = '9.0'
+     ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKGDTAdapter/VLionADSDKGDTAdapter.framework'
+     ss.dependency 'GDTMobSDK'
+     ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
+  end
+  
+  spec.subspec 'VLion3000ADSDKKSAdapter' do |ss|
+     ss.dependency 'Vlion3000AdSDK/Vlion3000AdSDK'
+     ss.ios.deployment_target = '9.0'
+     ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKKSAdapter/VLionADSDKKSAdapter.framework'
+     ss.dependency 'KSAdSDK'
+     ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
+  end
+  
+  spec.subspec 'VLion3000ADSDKMGTAdapter' do |ss|
+     ss.dependency 'Vlion3000AdSDK/Vlion3000AdSDK'
+     ss.ios.deployment_target = '9.0'
+     ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKMGTAdapter/VLionADSDKMGTAdapter.framework'
+     ss.dependency 'MintegralAdSDK'
+     ss.dependency 'MintegralAdSDK/NativeAdvancedAd'
+     ss.dependency 'MintegralAdSDK/RewardVideoAd'
+     ss.dependency 'MintegralAdSDK/InterstitialVideoAd'
+     ss.dependency 'MintegralAdSDK/BannerAd'
+     ss.dependency 'MintegralAdSDK/SplashAd'
      ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
   end
   
