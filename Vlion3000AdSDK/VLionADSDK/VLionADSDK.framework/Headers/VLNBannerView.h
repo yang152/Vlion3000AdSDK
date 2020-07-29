@@ -14,71 +14,64 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VLNBannerView : UIView
 /**
-*   构造方法
-  @param sceneName - 场景名称
+         横幅初始化构造方法--------该功能SDK必须要初始化回调显示成功了才可以使用
+         @param sceneName 场景名称，必传；
+         @param adSize 广告的长宽，必须要传一个确定的宽高
+         @param delegate 回调事件代理，非必传
+         @param rootViewController banner所处的控制器，处理点击相关事件使用，非必传
+ */
+- (instancetype)initWithSceneName:(NSString *)sceneName
+                           adSize:(CGSize)adSize
+                         delegate:(nullable id<VLNBannerViewDelegate>)delegate
+               rootViewController:(nullable UIViewController *)rootViewController;
+/**
+         banner初始化成功了，可以在需要的时机去调用该方法
+         加载广告
+ */
+- (void)loadBannerView;
+/**
+         广告位id
+ */
+@property (nonatomic, copy, readonly) NSString *tagId;
+/**
+        横幅初始化构造方法--------聚合平台调用接口
+        @param tagId 广告位id，必传；
+        @param adSize 广告的长宽，必须要传一个确定的宽高
+        @param delegate 回调事件代理，非必传
+        @param rootViewController banner所处的控制器，处理点击相关事件使用，非必传
 */
-- (instancetype)initWithSceneName:(NSString *)sceneName;
-/**
- *  构造方法
-    @param tagId - 广告位 ID
- */
-- (instancetype)initWithTagId:(NSString *)tagId;
-
-/**
- *  广告位 ID
- */
-@property (nonatomic, copy, readonly) NSString * tagId;
-
-/**
- *  父视图
- *  详解：[必选]需设置为显示广告的UIViewController
- */
-@property (nonatomic, weak) UIViewController *rootViewController;
-
-
-@property (nonatomic, weak) id<VLNBannerViewDelegate> delegate;
-
-/**
-*  加载广告并展示
-*  详解：如果想在广告加载成功后显示，可以在load成功回调里面，把视图添加到父视图上面
-*/
-- (void)loadAdAndShow;
+- (instancetype)initWithTagId:(NSString *)tagId
+                      adSize:(CGSize)adSize
+                    delegate:(nullable id<VLNBannerViewDelegate>)delegate
+          rootViewController:(nullable UIViewController *)rootViewController;
 
 @end
 
 @protocol VLNBannerViewDelegate <NSObject>
 
 /**
- Banner广告数据加载成功. 告知banner图片的大小。
- 必须实现，size计算bannerView的大小
- */
-- (CGRect)bannerView:(VLNBannerView *)bannerView didLoadBannerImageSize:(CGSize)size;
-
-@optional
-
-/**
- Banner广告加载成功. 加载成功后会frame即为图片的标准大小。
+         Banner广告加载成功.
  */
 - (void)bannerViewDidLoad:(VLNBannerView *)bannerView;
 
 /**
- Banner广告展示失败.
- @param error :失败error
+         Banner广告加载或者展示失败.
+         @param error :失败error
  */
 - (void)bannerView:(VLNBannerView *)bannerView didFailWithError:(NSError *)error;
 
 /**
- Banner广告曝光回调
+         Banner广告曝光回调
  */
 - (void)bannerViewExposured:(VLNBannerView *)bannerView;
 
 /**
- Banner广告点击回调
+         Banner广告点击回调
  */
 - (void)bannerViewDidClick:(VLNBannerView *)bannerView;
 
 /**
- Banner广告将点敲关闭回调
+         Banner广告关闭回调，您需要在该回调方法里面，移除掉广告对象
  */
 - (void)bannerViewDidClose:(VLNBannerView *)bannerView;
 

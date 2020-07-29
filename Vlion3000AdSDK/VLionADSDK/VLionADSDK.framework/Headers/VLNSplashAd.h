@@ -16,18 +16,20 @@ NS_ASSUME_NONNULL_BEGIN
 @interface VLNSplashAd : NSObject
 
 /**
- *  广告位 ID
- */
-@property (nonatomic, copy, readonly) NSString * tagId;
+*  委托对象
+*/
+@property (nonatomic, weak) id<VLNSplashAdDelegate> delegate;
 
 /**
- *  拉取广告时显示的占位图片
- *  详解：拉取广告过程中会用此图片占位。 通常设置为应用启动时的启动图即可。
+ * 广告请求超时时间，默认3s，单位s
  */
-@property (nonatomic, strong) UIImage *placeholderImage;
+@property (nonatomic, assign) NSTimeInterval timeout;
 
-
-@property (nonatomic, weak) id<VLNSplashAdDelegate> delegate;
+/**
+ *  开屏广告的背景图片
+ *  可以设置背景图片作为开屏加载时的默认背景
+ */
+@property (nonatomic, strong) UIImage *backgroundImage;
 
 - (instancetype)initWithSceneName:(NSString *)sceneName;
 
@@ -38,10 +40,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithTagId:(NSString *)tagId;
 
 /**
+ *  广告位 ID
+ */
+@property (nonatomic, copy, readonly) NSString *tagId;
+
+/**
  *  广告发起请求并展示在Window中
  *  发起拉取广告请求,并将获取的广告以全屏形式展示在传入的Window参数中
  *  提示: Splash广告只支持竖屏
- @param window 展示全屏开屏的容器
+    @param window 展示全屏开屏的容器
  */
 - (void)loadAdAndShowInWindow:(UIWindow *)window;
 
@@ -51,10 +58,31 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadAd;
 
 /**
-*    广告加载成功后调用
-  @param window 展示全屏开屏的容器
+    广告加载成功后展示
+    @param window 广告要展示的窗口
 */
 - (void)showAdInWindow:(UIWindow *)window;
+/**
+    广告加载成功后展示
+    @param viewController 您自定义的控制器
+    @param bottomView 自定义view
+    @param skipView 自定义跳过view
+*/
+- (void)showWithViewController:(nullable UIViewController *)viewController
+                    bottomView:(nullable UIView *)bottomView
+                      skipView:(nullable UIView *)skipView;
+
+/**
+     广告加载成功后展示
+     @param viewController 您自定义的控制器
+     @param bottomView 自定义view
+     @param skipView 自定义跳过view
+     @param exposureDuration 广告展示的时间
+ */
+- (void)showWithViewController:(nullable UIViewController *)viewController
+                    bottomView:(nullable UIView *)bottomView
+                      skipView:(nullable UIView *)skipView
+              exposureDuration:(int)exposureDuration;
 
 @end
 
@@ -63,7 +91,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @optional
 /**
- 开屏广告成功展示.
+ 开屏广告加载成功.
  */
 - (void)splashAdDidLoad:(VLNSplashAd *)splashAd;
 

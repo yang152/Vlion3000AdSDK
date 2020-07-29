@@ -3,7 +3,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Vlion3000AdSDK"
-  spec.version      = "1.2.16"
+  spec.version      = "3.6.9"
   spec.summary      = "Vlion3000AdSDK."
 
   spec.description  = <<-DESC
