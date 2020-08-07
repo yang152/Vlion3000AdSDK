@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (VLNAdSDKManager * _Nonnull)defaultManager;
 
 /**
- 3000平台初始化方式
- 根据AppId初始化广告SDK
- @param appId : 瑞狮平台注册的AppId,不填将导致无法请求广告数据
- 瑞狮平台地址:http://3000.mobi/
+     3000平台初始化方式
+     根据AppId初始化广告SDK
+     @param appId : 瑞狮平台注册的AppId,不填将导致无法请求广告数据
+     瑞狮平台地址:http://3000.mobi/
  */
 - (void)registerAppId:(NSString *)appId finishBlock:(void(^)(BOOL success, NSError *error))finishBlock;
 
@@ -28,10 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) BOOL reg300Success;
 
 /**
-聚合平台初始化方式
-根据AppId初始化广告SDK
-@param appId : 瑞狮平台注册的AppId,不填将导致无法请求广告数据
-瑞狮平台地址:http://puma.vlion.cn
+    聚合平台初始化方式
+    根据AppId初始化广告SDK
+    @param appId : 瑞狮平台注册的AppId,不填将导致无法请求广告数据
+    瑞狮平台地址:http://puma.vlion.cn
 */
 - (void)registerAppId:(NSString *)appId;
 
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 聚合方式初始化的appid
 - (NSString *)polyAppid;
 
-- (NSString *)getSDKVersion;
++ (NSString *)sdkVersion;
 
 @end
 

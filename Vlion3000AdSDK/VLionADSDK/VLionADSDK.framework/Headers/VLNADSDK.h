@@ -19,6 +19,7 @@
 #import "VLNNativeAdIconModel.h"
 #import "VLNNativeAdNativeModel.h"
 #import "VLNNativeExpressAdView.h"
+#import "VLNContent.h"
 
 //! Project version number for VLionADSDK.
 FOUNDATION_EXPORT double VLionADSDKVersionNumber;
