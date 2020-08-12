@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name = "vlionKSAdapter"
+  s.name = "RSPodKSAdaper"
   s.version = "3.2.2"
-  s.summary = "KSAdSDK."
+  s.summary = "RSPodKSAdaper."
   s.authors = {"chenyun"=>"chenyun@kuaishou.com"}
   s.homepage = "https://ssp.e.kuaishou.com/"
   s.frameworks = ["Foundation", "UIKit", "MobileCoreServices", "CoreGraphics", "Security", "SystemConfiguration", "CoreTelephony", "AdSupport", "CoreData", "StoreKit", "AVFoundation", "MediaPlayer", "CoreMedia", "WebKit", "Accelerate", "CoreLocation", "AVKit", "MessageUI", "QuickLook", "AddressBook"]
@@ -10,4 +10,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target    = '9.0'
   s.ios.vendored_framework   = 'KSAdSDK.framework'
+  s.resource = 'KSAdSDK.framework/KSAdSDK.bundle'
+  s.resource = 'KSAdSDK.framework/CU.bundle'
+
 end
