@@ -62,33 +62,33 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  插屏广告成功展示.
  */
-- (void)interstitialAdDidLoad:(VLNInterstitialAd *)interstitialAd;
+- (void)vl_interstitialAdDidLoad:(VLNInterstitialAd *)interstitialAd;
 
 /**
  插屏广告展示失败.
  @param error :失败error
  */
-- (void)interstitialAd:(VLNInterstitialAd *)interstitialAd didFailWithError:(NSError *)error;
+- (void)vl_interstitialAd:(VLNInterstitialAd *)interstitialAd didFailWithError:(NSError *)error;
 
 /**
  插屏广告曝光回调
  */
-- (void)interstitialAdExposured:(VLNInterstitialAd *)interstitialAd;
+- (void)vl_interstitialAdExposured:(VLNInterstitialAd *)interstitialAd;
 
 /**
  插屏广告点击回调
  */
-- (void)interstitialAdDidClick:(VLNInterstitialAd *)interstitialAd;
+- (void)vl_interstitialAdDidClick:(VLNInterstitialAd *)interstitialAd;
 
 /**
  插屏广告关闭回调
  */
-- (void)interstitialAdDidClose:(VLNInterstitialAd *)interstitialAd;
+- (void)vl_interstitialAdDidClose:(VLNInterstitialAd *)interstitialAd;
 
 /**
  插屏广告将要关闭回调
  */
-- (void)interstitialAdWillClose:(VLNInterstitialAd *)interstitialAd;
+- (void)vl_interstitialAdWillClose:(VLNInterstitialAd *)interstitialAd;
 
 @end
 

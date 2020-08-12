@@ -49,31 +49,32 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol VLNBannerViewDelegate <NSObject>
 
+@optional
 /**
          Banner广告加载成功.
  */
-- (void)bannerViewDidLoad:(VLNBannerView *)bannerView;
+- (void)vl_bannerViewDidLoad:(VLNBannerView *)bannerView;
 
 /**
          Banner广告加载或者展示失败.
          @param error :失败error
  */
-- (void)bannerView:(VLNBannerView *)bannerView didFailWithError:(NSError *)error;
+- (void)vl_bannerView:(VLNBannerView *)bannerView didFailWithError:(NSError *)error;
 
 /**
          Banner广告曝光回调
  */
-- (void)bannerViewExposured:(VLNBannerView *)bannerView;
+- (void)vl_bannerViewExposured:(VLNBannerView *)bannerView;
 
 /**
          Banner广告点击回调
  */
-- (void)bannerViewDidClick:(VLNBannerView *)bannerView;
+- (void)vl_bannerViewDidClick:(VLNBannerView *)bannerView;
 
 /**
          Banner广告关闭回调，您需要在该回调方法里面，移除掉广告对象
  */
-- (void)bannerViewDidClose:(VLNBannerView *)bannerView;
+- (void)vl_bannerViewDidClose:(VLNBannerView *)bannerView;
 
 @end
 

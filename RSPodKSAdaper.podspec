@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "RSPodKSAdaper"
-  s.version = "3.2.2"
+  s.version = "3.2.2.2"
   s.summary = "RSPodKSAdaper."
   s.authors = {"chenyun"=>"chenyun@kuaishou.com"}
   s.homepage = "https://ssp.e.kuaishou.com/"
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target    = '9.0'
   s.ios.vendored_framework   = 'KSAdSDK.framework'
-  s.resource = 'KSAdSDK.framework/KSAdSDK.bundle'
-  s.resource = 'KSAdSDK.framework/CU.bundle'
+  
+  s.resources = ['KSAdSDK.framework/CU.bundle', 'KSAdSDK.framework/KSAdSDK.bundle']
 
 end

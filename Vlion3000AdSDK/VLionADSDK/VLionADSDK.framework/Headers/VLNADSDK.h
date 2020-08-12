@@ -15,10 +15,7 @@
 #import "VLNRewardedVideoAd.h"
 #import "VLNSplashAd.h"
 #import "VLNNativeAd.h"
-#import "VLNNativeAdModel.h"
-#import "VLNNativeAdIconModel.h"
-#import "VLNNativeAdNativeModel.h"
-#import "VLNNativeExpressAdView.h"
+#import "VLNativeAdInfo.h"
 #import "VLNContent.h"
 
 //! Project version number for VLionADSDK.

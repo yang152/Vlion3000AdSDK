@@ -93,33 +93,33 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  开屏广告加载成功.
  */
-- (void)splashAdDidLoad:(VLNSplashAd *)splashAd;
+- (void)vl_splashAdDidLoad:(VLNSplashAd *)splashAd;
 
 /**
  开屏广告展示失败.
  @param error :失败error
  */
-- (void)splashAd:(VLNSplashAd *)splashAd didFailWithError:(NSError *)error;
+- (void)vl_splashAd:(VLNSplashAd *)splashAd didFailWithError:(NSError *)error;
 
 /**
  开屏广告曝光回调
  */
-- (void)splashAdExposured:(VLNSplashAd *)splashAd;
+- (void)vl_splashAdExposured:(VLNSplashAd *)splashAd;
 
 /**
  开屏广告点击回调
  */
-- (void)splashAdDidClick:(VLNSplashAd *)splashAd;
+- (void)vl_splashAdDidClick:(VLNSplashAd *)splashAd;
 
 /**
  开屏广告关闭回调
  */
-- (void)splashAdDidClose:(VLNSplashAd *)splashAd;
+- (void)vl_splashAdDidClose:(VLNSplashAd *)splashAd;
 
 /**
   开屏广告将要关闭回调
  */
-- (void)splashAdWillClose:(VLNSplashAd *)splashAd;
+- (void)vl_splashAdWillClose:(VLNSplashAd *)splashAd;
 
 @end
 

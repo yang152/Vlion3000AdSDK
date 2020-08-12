@@ -57,52 +57,52 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  广告数据加载成功回调
  */
-- (void)rewardVideoAdDidLoad:(VLNRewardedVideoAd *)rewardedVideoAd;
+- (void)vl_rewardVideoAdDidLoad:(VLNRewardedVideoAd *)rewardedVideoAd;
 
 /**
  视频数据下载成功回调，已经下载过的视频会直接回调
  */
-- (void)rewardVideoAdVideoDidLoad:(VLNRewardedVideoAd *)rewardedVideoAd;
+- (void)vl_rewardVideoAdVideoDidLoad:(VLNRewardedVideoAd *)rewardedVideoAd;
 
 /**
  视频播放页即将展示回调
  */
-- (void)rewardVideoAdWillVisible:(VLNRewardedVideoAd *)rewardedVideoAd;
+- (void)vl_rewardVideoAdWillVisible:(VLNRewardedVideoAd *)rewardedVideoAd;
 
 /**
  视频广告曝光回调
  */
-- (void)rewardVideoAdDidExposed:(VLNRewardedVideoAd *)rewardedVideoAd;
+- (void)vl_rewardVideoAdDidExposed:(VLNRewardedVideoAd *)rewardedVideoAd;
 
 /**
  视频播放页关闭回调
  */
-- (void)rewardVideoAdDidClose:(VLNRewardedVideoAd *)rewardedVideoAd;
+- (void)vl_rewardVideoAdDidClose:(VLNRewardedVideoAd *)rewardedVideoAd;
 
 /**
  视频广告信息点击回调
  */
-- (void)rewardVideoAdDidClicked:(VLNRewardedVideoAd *)rewardedVideoAd;
+- (void)vl_rewardVideoAdDidClicked:(VLNRewardedVideoAd *)rewardedVideoAd;
 
 /**
  视频广告加载错误信息回调
  */
-- (void)rewardVideoAd:(VLNRewardedVideoAd *)rewardedVideoAd loadFailedWithError:(NSError *)error;
+- (void)vl_rewardVideoAd:(VLNRewardedVideoAd *)rewardedVideoAd loadFailedWithError:(NSError *)error;
 
 /**
  视频广告播放错误信息回调
  */
-- (void)rewardVideoAd:(VLNRewardedVideoAd *)rewardedVideoAd playFailedWithError:(NSError *)error;
+- (void)vl_rewardVideoAd:(VLNRewardedVideoAd *)rewardedVideoAd playFailedWithError:(NSError *)error;
 
 /**
  视频广告播放达到激励条件回调
  */
-- (void)rewardVideoAdDidRewardEffective:(VLNRewardedVideoAd *)rewardedVideoAd;
+- (void)vl_rewardVideoAdDidRewardEffective:(VLNRewardedVideoAd *)rewardedVideoAd;
 
 /**
  视频广告视频播放完成
  */
-- (void)rewardVideoAdDidPlayFinish:(VLNRewardedVideoAd *)rewardedVideoAd;
+- (void)vl_rewardVideoAdDidPlayFinish:(VLNRewardedVideoAd *)rewardedVideoAd;
 
 @end
 

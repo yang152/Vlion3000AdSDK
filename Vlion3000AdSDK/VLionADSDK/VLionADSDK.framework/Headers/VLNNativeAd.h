@@ -9,84 +9,79 @@
 #import <Foundation/Foundation.h>
 #import "VLNNativeAdModel.h"
 #import <UIKit/UIKit.h>
+#import "VLNativeAdInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol VLNNativeAdDelegate;
 
 @interface VLNNativeAd : NSObject
+/**
+     构造方法----3000平台使用
+     @param sceneName 场景名称----必传
+     @param adSize 广告宽高----高度为0，会自适应高度
+     @param delegate 代理
+     @param viewController 用来处理广告跳转之类的一些事件
+ */
+- (instancetype)initWithSceneName:(NSString *)sceneName
+                           adSize:(CGSize)adSize
+                         delegate:(id<VLNNativeAdDelegate>)delegate
+                   viewController:(nullable UIViewController *)viewController;
 
+/**
+     构造方法----聚合平台使用
+     @param tagId 广告位id
+     @param adSize 广告宽高----高度为0，会自适应高度
+     @param delegate 代理
+     @param viewController 用来处理广告跳转之类的一些事件
+ */
+- (instancetype)initWithTagId:(NSString *)tagId
+                       adSize:(CGSize)adSize
+                     delegate:(id<VLNNativeAdDelegate>)delegate
+               viewController:(nullable UIViewController *)viewController;
 /**
  *  广告位 ID
  */
-@property (nonatomic, copy, readonly) NSString * tagId;
+@property (nonatomic, copy, readonly) NSString *tagId;
 
-- (instancetype)initWithSceneName:(NSString *)sceneName;
-
-- (instancetype)initWithTagId:(NSString *)tagId;
-
-- (void)loadAdData;
-
-/*
- *  viewControllerForPresentingModalView
- *  详解：[必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController
- */
-@property (nonatomic, weak) UIViewController *viewController;
+// 加载广告
+- (void)loadAd;
 
 /**
- *  委托对象
- */
-@property (nonatomic, weak) id<VLNNativeAdDelegate> delegate;
-
-/**
-*  广告的size------支持kvo去监控
+*  广告的size------支持kvo
 */
 @property (nonatomic, assign, readonly) CGSize adSize;
-
-
-/**
- *  广告数据渲染完毕即将展示时调用方法（设置后即曝光）。
- *  详解：[必选]广告数据渲染完毕，即将展示时需调用本方法。
- *      @param nativeAdModel 广告渲染的数据实体
- *      @param view         渲染出的广告结果页面
- */
-+ (void)registerAdModel:(VLNNativeAdModel *)nativeAdModel toView:(UIView *)view;
-
-/**
- 卸载点击事件
- */
-+ (void)unregisterAdModel:(VLNNativeAdModel *)nativeAdModel;
 
 @end
 
 @protocol VLNNativeAdDelegate <NSObject>
-
+@optional;
 /**
- *  原生广告加载广告数据成功回调，返回为VLionNativeAdModel对象
+     原生广告加载成功
  */
-- (void)nativeAd:(VLNNativeAd *)nativeAd successToLoad:(VLNNativeAdModel *)nativeAdModel;
+- (void)vl_nativeAdDidLoadSuccess:(VLNNativeAd *)nativeAd nativeAdModels:(NSArray <VLNativeAdInfo *>*)nativeAdModels;
 
 /**
  *  原生广告加载广告数据失败回调
  */
-- (void)nativeAd:(VLNNativeAd *)nativeAd didFailWithError:(NSError *)error;
-
-@optional
+- (void)vl_nativeAd:(VLNNativeAd *)nativeAd didFailWithError:(NSError *)error;
 
 /**
  广告曝光回调
  */
-- (void)nativeAdExposured:(VLNNativeAd *)nativeAd;
+- (void)vl_nativeAdExposured:(VLNNativeAd *)nativeAd;
 
 /**
  广告点击回调
  */
-- (void)nativeAdDidClick:(VLNNativeAd *)nativeAd;
+- (void)vl_nativeAdDidClick:(VLNNativeAd *)nativeAd;
 
 /**
  广告点击关闭
  */
-- (void)nativeAdDidClickClose:(VLNNativeAd *)nativeAd;
+- (void)vl_nativeAdDidClickClose:(VLNNativeAd *)nativeAd;
+
+
 
 @end
 

@@ -16,22 +16,22 @@
 /**
  *  原生广告加载广告数据成功回调，返回为VLionNativeAdModel对象
  */
-- (void)drawAd:(VLNDrawAd *_Nullable)drawAd successToLoad:(NSArray <VLNDrawAdModel *>*_Nullable)drawAdModels;
+- (void)vl_drawAd:(VLNDrawAd *_Nullable)drawAd successToLoad:(NSArray <VLNDrawAdModel *>*_Nullable)drawAdModels;
 
 /**
  *  加载广告数据失败回调
  */
-- (void)drawAd:(VLNDrawAd *_Nullable)drawAd didFailWithError:(NSError *_Nullable)error;
+- (void)vl_drawAd:(VLNDrawAd *_Nullable)drawAd didFailWithError:(NSError *_Nullable)error;
 
 /**
     广告曝光回调
  */
-- (void)drawAdExposured:(VLNDrawAd *_Nullable)drawAd;
+- (void)vl_drawAdExposured:(VLNDrawAd *_Nullable)drawAd;
 
 /**
     广告点击回调
  */
-- (void)drawAdDidClick:(VLNDrawAd *_Nullable)drawAd;
+- (void)vl_drawAdDidClick:(VLNDrawAd *_Nullable)drawAd;
 
 @end
 
