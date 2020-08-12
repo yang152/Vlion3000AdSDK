@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VLNNativeAdModel.h"
 #import <UIKit/UIKit.h>
 #import "VLNativeAdInfo.h"
 

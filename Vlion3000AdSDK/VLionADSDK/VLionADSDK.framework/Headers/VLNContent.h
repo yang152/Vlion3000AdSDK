@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VLNContentInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
