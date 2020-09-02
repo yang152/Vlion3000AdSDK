@@ -10,7 +10,7 @@
 
 @class VLNewsAdInfoModel, VlionAdPageView;
 
-@protocol VlionAdPageViewDelegate <NSObject>
+@protocol VlionAdPageViewAdDataSource <NSObject>
 /**
  
      该回调为用户加载自己广告而设置，返回YES则使用用户自己的广告；返回NO则使用SDK内部广告
@@ -55,6 +55,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithFrame:(CGRect)frame
                     sceneName:(NSString *)sceneName
                     currentVC:(UIViewController *)currentVC;
+/**
+    @param pageHomeLoadStatus 首页加载完成回调，success为YES，标识加载成功；NO表示加载失败；
+*/
+- (instancetype)initWithFrame:(CGRect)frame
+                    sceneName:(NSString *)sceneName
+                    currentVC:(UIViewController *)currentVC
+           pageHomeLoadStatus:( void(^ _Nullable )(BOOL success))pageHomeLoadStatus;
 
 /**
     使用聚合平台，新闻页面初始化方法，所有参数为必传参数
@@ -71,10 +78,36 @@ NS_ASSUME_NONNULL_BEGIN
                         media:(NSString *)media
                      submedia:(NSString *)submedia
                     currentVC:(UIViewController *)currentVC;
+
+/**
+     @param pageHomeLoadStatus 首页加载完成回调，success为YES，标识加载成功；NO表示加载失败；
+ */
+- (instancetype)initWithFrame:(CGRect)frame
+                        media:(NSString *)media
+                     submedia:(NSString *)submedia
+                    currentVC:(UIViewController *)currentVC
+           pageHomeLoadStatus:( void(^ _Nullable )(BOOL success))pageHomeLoadStatus;
+/**
+     新闻首页加载成功和失败回调
+ */
+@property (nonatomic, copy) void(^pageHomeLoadStatus)(BOOL success);
+/**
+     整个新闻页面停留时间，从新闻首页页面渲染成功到首页对象析构
+ */
+@property (nonatomic, copy) void(^pageTimeLengthBlock)(NSTimeInterval pageTimeLength);
+
+/**
+     VlionAdPageView是否可以返回，新闻列表也可能是用web模式，需要用到这个属性和下面方法；
+ */
+@property (nonatomic, readonly) BOOL canGoBack;
+
+- (void)goBack;
+
+
 /**
     如果要自定义广告，可以设置这个代理
  */
-@property (nonatomic, weak) id<VlionAdPageViewDelegate>delegate;
+@property (nonatomic, weak) id<VlionAdPageViewAdDataSource>adSource;
 
 /**
    刷新页面
