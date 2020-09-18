@@ -55,6 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 /**
+ 激励视频可以展示
+ */
+- (void)vl_rewardVideoAdReadyToShow:(VLNRewardedVideoAd *)rewardedVideoAd;
+
+/**
  广告数据加载成功回调
  */
 - (void)vl_rewardVideoAdDidLoad:(VLNRewardedVideoAd *)rewardedVideoAd;

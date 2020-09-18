@@ -24,11 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
                            adSize:(CGSize)adSize
                          delegate:(nullable id<VLNBannerViewDelegate>)delegate
                rootViewController:(nullable UIViewController *)rootViewController;
-/**
-         banner初始化成功了，可以在需要的时机去调用该方法
-         加载广告
- */
-- (void)loadBannerView;
+
 /**
          广告位id
  */
@@ -45,11 +41,22 @@ NS_ASSUME_NONNULL_BEGIN
                     delegate:(nullable id<VLNBannerViewDelegate>)delegate
           rootViewController:(nullable UIViewController *)rootViewController;
 
+/**
+         加载广告
+ */
+- (void)loadAd;
+
 @end
 
 @protocol VLNBannerViewDelegate <NSObject>
 
 @optional
+/**
+         该方法只有在banner实际比例和初始化设置的偏差很大时候会执行
+         @param sizeRate 广告实际宽高比
+ */
+- (void)vl_bannerView:(VLNBannerView *)bannerView sizeRate:(CGFloat)sizeRate;
+
 /**
          Banner广告加载成功.
  */
