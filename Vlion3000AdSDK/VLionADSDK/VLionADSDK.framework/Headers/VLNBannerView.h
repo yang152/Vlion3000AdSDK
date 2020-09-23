@@ -14,13 +14,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VLNBannerView : UIView
 /**
-         横幅初始化构造方法--------该功能SDK必须要初始化回调显示成功了才可以使用
+         横幅广告初始化方式一，构造方法
          @param sceneName 场景名称，必传；
          @param adSize 广告的长宽，必须要传一个确定的宽高
          @param delegate 回调事件代理，非必传
          @param rootViewController banner所处的控制器，处理点击相关事件使用，非必传
+         使用该方法初始化，对应的SDK初始化必须是带回调block的那个，而且必须要初始化成功才可以使用
  */
 - (instancetype)initWithSceneName:(NSString *)sceneName
+                           adSize:(CGSize)adSize
+                         delegate:(nullable id<VLNBannerViewDelegate>)delegate
+               rootViewController:(nullable UIViewController *)rootViewController;
+/**
+         横幅广告初始化方式二，构造方法
+         @param tag3000Id 广告位id，在3000平台对应广告对应广告最左边的数字就是
+         @param adSize 广告的长宽，必须要传一个确定的宽高
+         @param delegate 回调事件代理，非必传
+         @param rootViewController banner所处的控制器，处理点击相关事件使用，非必传
+         使用该方法初始化，对应的SDK初始化------> [[VLNAdSDKManager defaultManager] registerAppId:@""],只要初始化了就可以使用
+ */
+- (instancetype)initWithTag3000Id:(NSString *)tag3000Id
                            adSize:(CGSize)adSize
                          delegate:(nullable id<VLNBannerViewDelegate>)delegate
                rootViewController:(nullable UIViewController *)rootViewController;

@@ -16,13 +16,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VLNNativeAd : NSObject
 /**
-     构造方法----3000平台使用
+     构造方法一----3000平台使用
      @param sceneName 场景名称----必传
      @param adSize 广告宽高----高度为0，会自适应高度
      @param delegate 代理
      @param viewController 用来处理广告跳转之类的一些事件
+     使用该方法初始化，对应的SDK初始化必须是带回调block的那个，而且必须要初始化成功才可以使用
  */
 - (instancetype)initWithSceneName:(NSString *)sceneName
+                           adSize:(CGSize)adSize
+                         delegate:(id<VLNNativeAdDelegate>)delegate
+                   viewController:(nullable UIViewController *)viewController;
+/**
+     构造方法二----3000平台使用
+     @param tag3000Id 场景名称----必传
+     @param adSize 广告宽高----高度为0，会自适应高度
+     @param delegate 代理
+     @param viewController 用来处理广告跳转之类的一些事件
+     使用该方法初始化，对应的SDK初始化------> [[VLNAdSDKManager defaultManager] registerAppId:@""],只要初始化了就可以使用
+ */
+- (instancetype)initWithTag3000Id:(NSString *)tag3000Id
                            adSize:(CGSize)adSize
                          delegate:(id<VLNNativeAdDelegate>)delegate
                    viewController:(nullable UIViewController *)viewController;

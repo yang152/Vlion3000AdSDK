@@ -16,6 +16,19 @@ NS_ASSUME_NONNULL_BEGIN
 @interface VLNInterstitialAd : NSObject
 
 /**
+     广告初始化方式一，构造方法
+     @param sceneName 场景名称，在3000平台场景里面可以查看
+     使用该方法初始化，对应的SDK初始化必须是带回调block的那个，而且必须要初始化成功才可以使用
+ */
+- (instancetype)initWithSceneName:(NSString *)sceneName;
+/**
+     广告初始化方式二，构造方法
+     @param tag3000Id  广告位id，在3000平台对应广告对应广告最左边的数字就是
+     使用该方法初始化，对应的SDK初始化------> [[VLNAdSDKManager defaultManager] registerAppId:@""],只要初始化了就可以使用
+ */
+- (instancetype)initWithTag3000Id:(NSString *)tag3000Id;
+
+/**
  *  广告位 ID
  */
 @property (nonatomic, copy, readonly) NSString * tagId;
@@ -34,10 +47,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<VLNInterstitialAdDelegate> delegate;
 
-- (instancetype)initWithSceneName:(NSString *)sceneName;
-
 /**
- *  构造方法
+ *  构造方法---聚合平台使用
  @param tagId - 广告位 ID
  */
 - (instancetype)initWithTagId:(NSString *)tagId;
