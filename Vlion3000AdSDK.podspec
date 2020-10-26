@@ -3,7 +3,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Vlion3000AdSDK"
-  spec.version      = "3.7.8.4"
+  spec.version      = "3.7.9.2"
   spec.summary      = "Vlion3000AdSDK."
 
   spec.description  = <<-DESC
@@ -70,6 +70,16 @@ Pod::Spec.new do |spec|
      ss.dependency 'RSPodKSAdaper'
      ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
      ss.pod_target_xcconfig = { 'skip_validation' => true }
+  end
+  
+    spec.subspec 'VLion3000ADSDKJDAdapter' do |ss|
+     ss.dependency 'Vlion3000AdSDK/Vlion3000AdSDK'
+     ss.ios.deployment_target = '9.0'
+     ss.vendored_frameworks = 'Vlion3000AdSDK/VLionADSDKJDAdapter/VLionADSDKJDAdapter.framework'
+     ss.user_target_xcconfig =   {'OTHER_LDFLAGS' => ['-lObjC']}
+     ss.frameworks = ["SafariServices", "CoreLocation", "MapKit", "AdSupport", "CoreTelephony", "SystemConfiguration", "WebKit", "ImageIO", "Accelerate", "Photos", "AssetsLibrary", "CoreServices"]
+     ss.libraries = ["z", "sqlite3"]
+     ss.resource = 'Vlion3000AdSDK/VLionADSDKJDAdapter/JADYun.bundle'
   end
   
   spec.subspec 'VLion3000ADSDKMGTAdapter' do |ss|
