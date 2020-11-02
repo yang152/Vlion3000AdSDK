@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
      VlionAdPageView是否可以返回，新闻列表也可能是用web模式，需要用到这个属性和下面方法；
  */
-@property (nonatomic, readonly) BOOL canGoBack;
+@property (nonatomic, assign) BOOL canGoBack;
 
 - (void)goBack;
 
