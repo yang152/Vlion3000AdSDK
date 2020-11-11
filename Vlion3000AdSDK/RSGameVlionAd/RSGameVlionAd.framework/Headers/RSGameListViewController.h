@@ -115,15 +115,26 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RSGameListViewController : UIViewController
 /**
- 必传sceneName,自己在后台配置的场景名称
+    必传sceneName,自己在后台配置的场景名称
 */
 - (instancetype)initWithSceneName:(NSString *)sceneName;
 /**
- 必传mediaId,可向客服获取
+    必传mediaId,可向客服获取
  */
 - (instancetype)initWithMediaId:(NSString *)mediaId;
 
 @property (nonatomic, weak) id<RSGameListViewControllerDelegate> delegate;
+
+/**
+    隐藏列表页面上面空白部分，和相关按钮
+    @param topMargin 列表页面距离控制器view顶部的距离
+ */
+- (void)hideGameListTopViewWithTopMargin:(CGFloat)topMargin;
+
+/**
+     游戏列表页面刷新
+ */
+- (void)refreshGameList;
 
 @end
 
