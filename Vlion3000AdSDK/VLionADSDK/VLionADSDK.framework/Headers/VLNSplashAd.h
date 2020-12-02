@@ -35,26 +35,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<VLNSplashAdDelegate> delegate;
 
 /**
- * 广告请求超时时间，默认3s，单位s
- */
-@property (nonatomic, assign) NSTimeInterval timeout;
-
-/**
- *  开屏广告的背景图片
- *  可以设置背景图片作为开屏加载时的默认背景
- */
-@property (nonatomic, strong) UIImage *backgroundImage;
-
-/**
  *  构造方法        聚合平台初始化方式
- @param tagId - 广告位 ID
+    @param tagId - 广告位 ID
  */
 - (instancetype)initWithTagId:(NSString *)tagId;
-
-/**
- *  广告位 ID
- */
-@property (nonatomic, copy, readonly) NSString *tagId;
 
 /**
  *  广告发起请求并展示在Window中
@@ -74,27 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
     @param window 广告要展示的窗口
 */
 - (void)showAdInWindow:(UIWindow *)window;
-/**
-    广告加载成功后展示
-    @param viewController 您自定义的控制器
-    @param bottomView 自定义view
-    @param skipView 自定义跳过view
-*/
-- (void)showWithViewController:(nullable UIViewController *)viewController
-                    bottomView:(nullable UIView *)bottomView
-                      skipView:(nullable UIView *)skipView;
 
-/**
-     广告加载成功后展示
-     @param viewController 您自定义的控制器
-     @param bottomView 自定义view
-     @param skipView 自定义跳过view
-     @param exposureDuration 广告展示的时间
- */
-- (void)showWithViewController:(nullable UIViewController *)viewController
-                    bottomView:(nullable UIView *)bottomView
-                      skipView:(nullable UIView *)skipView
-              exposureDuration:(int)exposureDuration;
 
 @end
 
