@@ -82,7 +82,10 @@
     激励视频点击关闭
 */
 - (void)vlionRewardVideoAdDidClosedWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
-
+/**
+    激励
+*/
+- (void)vlionRewardVideoAdDidRewardEffectiveWithGameId:(NSString *_Nullable)gameId tagId:(NSString *_Nullable)tagId;
 
 /**
     开屏广告加载成功
